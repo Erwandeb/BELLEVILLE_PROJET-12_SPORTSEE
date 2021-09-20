@@ -1,0 +1,15 @@
+.main-logo{
+    background-color: black;
+    height: 95px;
+    .logo-display{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 255px;
+        height: 95px;
+        img{
+            background-color: black;
+        }
+    }
+    
+}

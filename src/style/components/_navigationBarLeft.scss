@@ -1,0 +1,38 @@
+.NavigationBarLeft{
+   background-color: $main-color;
+   display: flex;
+   flex-direction: column;
+   width: 120px ;
+   height: 1024px;
+   justify-content: center;
+    .iconList{
+        display: flex;
+        flex-direction: column;
+        width: 120px ;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        img{
+            width: 64px;
+            height: 64px;
+            border-radius: 10px;
+            margin-top: 7px;
+            margin-bottom: 7px;
+        }
+    }
+    .copyright{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        p{
+            color: white;
+            writing-mode: vertical-lr;
+            text-orientation: sideways;
+            text-align: center;
+            align-items: center;
+        }
+    }
+   
+}
+
