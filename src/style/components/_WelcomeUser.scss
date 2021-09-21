@@ -1,0 +1,15 @@
+.accueil-display{
+    position: absolute;
+    justify-self: stretch;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    margin-left: 100px;
+    width: 400px;
+    h1{
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+    p{
+       font-size: 18px; 
+    }
+}

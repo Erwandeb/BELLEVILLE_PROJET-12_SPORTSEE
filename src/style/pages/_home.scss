@@ -1,0 +1,17 @@
+.home{
+    position: relative;
+    width: 100%;
+    .corpus-home{
+        width: 85%;
+        display: grid;
+        position: absolute;
+        left: 120px;
+        top:96px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-column-gap: 20px;
+        grid-template-rows: 100px 100px 100px 100px 100px 100px 100px 100px ;
+        grid-row-gap: 15px;
+        justify-self: stretch;
+
+    }
+}

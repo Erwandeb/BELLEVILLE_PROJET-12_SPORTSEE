@@ -1,0 +1,18 @@
+.navigation{
+    display: flex;
+    background-color: $main-color;
+    width: 100%;
+    .liste-navigation{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        align-items: center;
+    }
+    a{
+        list-style-type: none;
+        text-decoration: none;
+        color: white;
+        font-size: 24px;
+    }
+}

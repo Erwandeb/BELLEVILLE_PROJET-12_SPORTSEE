@@ -1,12 +1,17 @@
 import React from 'react';
-import Logo from '../components/Logo';
+import Navigation from '../components/Navigation';
 import NavigationBarLeft from '../components/NavigationBarLeft';
+import WelcomeUser from '../components/WelcomeUser';
 
 const Home = () => {
     return (
         <div className="home">
-            <Logo/>
+            <Navigation/>
             <NavigationBarLeft/>
+            <div className ="corpus-home">
+                <WelcomeUser/>
+            </div>
+          
         </div>
     );
 };
