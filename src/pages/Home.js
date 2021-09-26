@@ -7,11 +7,11 @@ import WelcomeUser from '../components/WelcomeUser';
 const Home = () => {
     return (
         <div className="home">
-            <Navigation/>
-            <NavigationBarLeft/>
+            <Navigation />
+            <NavigationBarLeft />
             <Apicall />
             <div className ="corpus-home">
-                <WelcomeUser/>
+                <WelcomeUser />
             </div>
           
         </div>
