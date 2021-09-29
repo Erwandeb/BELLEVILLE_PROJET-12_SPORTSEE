@@ -1,6 +1,8 @@
 import React from 'react';
 
-const WelcomeUser = () => {
+const WelcomeUser = (props) => {
+
+    console.log(props)
     return (
         <div className="accueil-display">
             <h1>Bonjour Thomas</h1>
