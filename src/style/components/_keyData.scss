@@ -1,0 +1,23 @@
+.keyData{
+    background-color: yellow;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+
+    .keyCount{
+        display: flex;
+        border: 1px solid black;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .dataBold{
+        font-weight: bold;
+        font-size: 20px;
+    }
+    
+    p{
+        font-size: 14px;
+    }
+}
+
