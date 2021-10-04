@@ -8,18 +8,29 @@ import KeyData from '../components/KeyData';
 
 const Home = () => {
 
-    const [user, setUser] = useState({})
+   
+
 
     useEffect(() => {
-       api.getUserDetails(99).then((res) => setUser(res.user))
-         
+        fetchItem();
+        console.log(user)
     },[])
   
-    console.log("user ", user)
+    const [user, setUser] = useState({});
+
+
+    const fetchItem = async () =>{
+        const fetchItem = await api.getUserDetails(99)
+        .then((user) => {setUser(user);
+
+        })
+        const user = await fetchItem;
+        setUser(user)
+    };
 
     /*
-    <WelcomeUser userName={user}/>
-    <KeyData userName={user}/>
+        <WelcomeUser user={user}/>
+        <KeyData user={user}/>
     */
 
     return (
@@ -27,8 +38,7 @@ const Home = () => {
             <Navigation />
             <NavigationBarLeft />
             <div className="corpus-home">
-                <WelcomeUser userName={user}/>
-                <KeyData userName={user}/>
+              
             </div>
           
         </div>

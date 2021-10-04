@@ -1,24 +1,33 @@
 /* Service API/MOCK */
 
 // CALL vers APIMock
+
+const apiMockRunning = true;
+
 class ApiMock{
 
     getUserDetails(id){
-        return Promise.resolve({
-            id: 99,
-            userInfos:{
-                firstname: 'Mike',
-                lastName: 'Tyson',
-                age : 55,
-            },
-            todayScore: 0.9,
-            keyData: {
-                calorieCount: 2600,
-                proteinCount: 195,
-                carbohydrateCount: 3000,
-                lipidCount: 80
+        return new Promise((resolve, reject) => {
+            if(apiMockRunning) resolve({
+                id: 99,
+                userInfos:{
+                    firstname: 'Mike',
+                    lastName: 'Tyson',
+                    age : 55,
+                },
+                todayScore: 0.9,
+                keyData: {
+                    calorieCount: 2600,
+                    proteinCount: 195,
+                    carbohydrateCount: 3000,
+                    lipidCount: 80
+                }
+            })
+            else{
+                reject('api mock is not running')
             }
         })
+       
     }
 
     getUserActivity(id){
