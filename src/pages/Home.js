@@ -11,12 +11,11 @@ const Home = () => {
     const [user, setUser] = useState({})
 
     useEffect(() => {
-       const userDetails = api.getUserDetails(99)
-            .then(() => setUser(user))
-            .catch(() =>{console.log('erreur from mock')})
+       api.getUserDetails(99).then((res) => setUser(res.user))
+         
     },[])
   
-    console.log("olé ", user)
+    console.log("user ", user)
 
     /*
     <WelcomeUser userName={user}/>
@@ -28,7 +27,8 @@ const Home = () => {
             <Navigation />
             <NavigationBarLeft />
             <div className="corpus-home">
-                
+                <WelcomeUser userName={user}/>
+                <KeyData userName={user}/>
             </div>
           
         </div>
