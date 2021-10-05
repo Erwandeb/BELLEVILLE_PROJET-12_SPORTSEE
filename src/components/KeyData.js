@@ -7,9 +7,7 @@ import fatIcon from '../public/medias/fat-icon.png';
 
 
 
-const KeyData = (props) => {
-
-    
+const KeyData = ({ user }) => {
 
     return (
         <div className ="keyData">
