@@ -1,14 +1,22 @@
 .keyData{
-    background-color: yellow;
-    height: 600px;
+    height: 550px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    grid-column-start: 6;
+    grid-row-start: 3;
 
     .keyCount{
         display: flex;
-        border: 1px solid black;
         justify-content: space-around;
         align-items: center;
+        background-color: #FBFBFB;
+        width: 258px;
+        height: 124px;
+        img{
+            width: 60px;
+            height: 60px;
+        }
     }
 
     .dataBold{
