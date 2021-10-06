@@ -1,9 +1,22 @@
-/* Service API/MOCK */
-
-// CALL vers APIMock
+/**
+* This component make data from API or ApiMock
+* Switch monitor is on the .ENV file
+* 
+* @author Erwan
+* @version 1.1
+*/
 
 const apiMockRunning = true;
 
+
+/**
+* 
+* This class is API Mock for developping app
+*
+* @param id This represent the id of user
+* @return data from API, in JSON format. Otherwise, it throw error
+*
+*/
 class ApiMock{
 
     getUserDetails(id){
@@ -154,8 +167,15 @@ class ApiMock{
 }
 
 
+/**
+* 
+* Class API is used to connect this app to the backend. 
+*
+* @param id This represent the id of user
+* @return data from API, in JSON format. Otherwise, it throw error 
+*
+*/
 
-// CALL vers API BackEnd
 class Api {
     
     getUserDetails(id){
@@ -179,7 +199,15 @@ class Api {
 }
 
 
-// ICI pour switcher en Mock ou API 
+/**
+* 
+* Used to switch from reel API to Mocked API
+* We modifiying .ENV file for switching
+*
+* @param id This represent the id of user
+* @return data from API, in JSON format. Otherwise, it throw error
+*
+*/
 let api = new Api()
 if(process.env.REACT_APP_API === 'mock'){
     api = new ApiMock()

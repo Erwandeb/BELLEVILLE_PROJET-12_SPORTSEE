@@ -5,6 +5,14 @@ import WelcomeUser from '../components/WelcomeUser';
 import api from '../api';
 import KeyData from '../components/KeyData';
 
+/**
+* This page group all data for chart component
+* Data come from the component api.js 
+* 
+* @author Erwan
+* @version 1.1
+*/
+
 
 const Home = () => {
 
