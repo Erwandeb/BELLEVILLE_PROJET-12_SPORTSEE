@@ -4,7 +4,8 @@ import NavigationBarLeft from '../components/NavigationBarLeft';
 import WelcomeUser from '../components/WelcomeUser';
 import api from '../api';
 import KeyData from '../components/KeyData';
-import BarChartActivity from '../components/BarChart';
+import BarChartActivity from '../components/BarChartActivity';
+import AverageSession from '../components/AverageSession';
 
 /**
 * This page group all data for chart component
@@ -20,14 +21,18 @@ const Home = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [user, setUser] = useState({});
-    const [activity, setActivity] = useState({})
-
+    const [activity, setActivity] = useState({});
+    const [average, setAverage] = useState({});
+    const [performance, setPerformance] = useState({});
 
     const id = 99;
 
+
     useEffect(() => {
         mockingApiUserDetails();
-        mockingApiUserActivity()
+        mockingApiUserActivity();
+        mockingApiUserAverageSession();
+        mockingApiUserPerformance();
     },[])
     
     function mockingApiUserDetails(){
@@ -60,6 +65,36 @@ const Home = () => {
         .catch(err => console.log(err))
     }
 
+    function mockingApiUserAverageSession(){
+        api.getUserAverageSession(id)
+        .then(
+            (average) => {
+            setIsLoaded(true);
+            setAverage(average);
+            },
+            (error) => {
+                setIsLoaded(true);
+                setError(error);
+            }
+        )
+        .catch(err => console.log(err))
+    }
+
+    
+    function mockingApiUserPerformance(){
+        api.getUserPerformance(id)
+        .then(
+            (performance) => {
+            setIsLoaded(true);
+            setPerformance(performance);
+            },
+            (error) => {
+                setIsLoaded(true);
+                setError(error);
+            }
+        )
+        .catch(err => console.log(err))
+    }
 
 /* */
     if(error) {
@@ -75,6 +110,7 @@ const Home = () => {
                 <WelcomeUser user={user} />
                 <KeyData user={user} />
                 <BarChartActivity activity = {activity} />
+                <AverageSession average={average} />
             </div>
           
         </div>
