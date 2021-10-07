@@ -17,7 +17,7 @@ const WelcomeUser = ({ user }) => {
     if(!user.userInfos){
         return null
     }
-    console.log(user);
+
     return (
         <div className="accueil-display">
             <h1>Bonjour <strong>{user.userInfos.firstname}</strong></h1>
@@ -26,9 +26,13 @@ const WelcomeUser = ({ user }) => {
     );
 };
 
-
+/*
 WelcomeUser.propTypes ={
     firstname:PropTypes.string.isRequired
 }
+*/
+
+
+
 
 export default WelcomeUser;

@@ -4,6 +4,7 @@ import NavigationBarLeft from '../components/NavigationBarLeft';
 import WelcomeUser from '../components/WelcomeUser';
 import api from '../api';
 import KeyData from '../components/KeyData';
+import BarChartActivity from '../components/BarChart';
 
 /**
 * This page group all data for chart component
@@ -19,14 +20,18 @@ const Home = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [user, setUser] = useState({});
+    const [activity, setActivity] = useState({})
 
+
+    const id = 99;
 
     useEffect(() => {
         mockingApiUserDetails();
+        mockingApiUserActivity()
     },[])
     
     function mockingApiUserDetails(){
-        api.getUserDetails(99)
+        api.getUserDetails(id)
         .then(
             (user) => {
             setIsLoaded(true);
@@ -38,10 +43,25 @@ const Home = () => {
             }
         )
         .catch(err => console.log(err))
-        console.log("user99", user);
+    }
+
+    function mockingApiUserActivity(){
+        api.getUserActivity(id)
+        .then(
+            (activity) => {
+            setIsLoaded(true);
+            setActivity(activity);
+            },
+            (error) => {
+                setIsLoaded(true);
+                setError(error);
+            }
+        )
+        .catch(err => console.log(err))
     }
 
 
+/* */
     if(error) {
         return <div className="infoHomePage">Erreur : {error.message}</div>;
     } else if (!isLoaded) {
@@ -54,6 +74,7 @@ const Home = () => {
             <div className="corpus-home">
                 <WelcomeUser user={user} />
                 <KeyData user={user} />
+                <BarChartActivity activity = {activity} />
             </div>
           
         </div>

@@ -44,7 +44,8 @@ class ApiMock{
     }
 
     getUserActivity(id){
-        return Promise.resolve({
+        return new Promise((resolve, reject) => {
+            if(apiMockRunning) resolve({
             userId: 99,
             sessions: [
                 {
@@ -84,84 +85,98 @@ class ApiMock{
                 }
             ]
         })
+        else{
+            reject('api mock is not running')
+        }
+        })
+        
     }
 
 
     getUserAverageSession(id){
-        return Promise.resolve({
-            userId: 99,
-            sessions: [
-                {
-                    day: 1,
-                    sessionLength: 32
-                },
-                {
-                    day: 2,
-                    sessionLength: 27
-                },
-                {
-                    day: 3,
-                    sessionLength: 38
-                },
-                {
-                    day: 4,
-                    sessionLength: 42
-                },
-                {
-                    day: 5,
-                    sessionLength: 35
-                },
-                {
-                    day: 6,
-                    sessionLength: 28
-                },
-                {
-                    day: 7,
-                    sessionLength: 40
-                }
-            ]
-
+        return new Promise((resolve, reject) => {
+            if(apiMockRunning) resolve({
+                userId: 99,
+                sessions: [
+                    {
+                        day: 1,
+                        sessionLength: 32
+                    },
+                    {
+                        day: 2,
+                        sessionLength: 27
+                    },
+                    {
+                        day: 3,
+                        sessionLength: 38
+                    },
+                    {
+                        day: 4,
+                        sessionLength: 42
+                    },
+                    {
+                        day: 5,
+                        sessionLength: 35
+                    },
+                    {
+                        day: 6,
+                        sessionLength: 28
+                    },
+                    {
+                        day: 7,
+                        sessionLength: 40
+                    }
+                ]
+            })
+            else{
+                reject('api mock is not running')
+            }
         })
     }
 
 
     getUserPerformance(id){
-        return Promise.resolve({
-            userId: 99,
-            kind: {
-                1: 'cardio',
-                2: 'energy',
-                3: 'endurance',
-                4: 'strength',
-                5: 'speed',
-                6: 'intensity'
-            },
-            data: [
-                {
-                    value: 140,
-                    kind: 1
+        return new Promise((resolve, reject) => {
+            if(apiMockRunning) resolve({
+                userId: 99,
+                kind: {
+                    1: 'cardio',
+                    2: 'energy',
+                    3: 'endurance',
+                    4: 'strength',
+                    5: 'speed',
+                    6: 'intensity'
                 },
-                {
-                    value: 125,
-                    kind: 2
-                },
-                {
-                    value: 130,
-                    kind: 3
-                },
-                {
-                    value: 100,
-                    kind: 4
-                },
-                {
-                    value: 210,
-                    kind: 5
-                },
-                {
-                    value: 190,
-                    kind: 6
-                }
-            ]
+                data: [
+                    {
+                        value: 140,
+                        kind: 1
+                    },
+                    {
+                        value: 125,
+                        kind: 2
+                    },
+                    {
+                        value: 130,
+                        kind: 3
+                    },
+                    {
+                        value: 100,
+                        kind: 4
+                    },
+                    {
+                        value: 210,
+                        kind: 5
+                    },
+                    {
+                        value: 190,
+                        kind: 6
+                    }
+                ]
+            })
+            else{
+                reject('api mock is not running')
+            }
         })
     }
 }
