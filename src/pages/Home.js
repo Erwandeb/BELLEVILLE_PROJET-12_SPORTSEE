@@ -7,6 +7,7 @@ import KeyData from '../components/KeyData';
 import BarChartActivity from '../components/BarChartActivity';
 import AverageSession from '../components/AverageSession';
 import PerformanceChart from '../components/PerformanceChart';
+import DailyScore from '../components/DailyScore';
 
 /**
 * This page group all data for chart component
@@ -113,6 +114,7 @@ const Home = () => {
                 <BarChartActivity activity = {activity} />
                 <AverageSession average={average} />
                 <PerformanceChart performance={performance}/>
+                < DailyScore  user={user}/>
             </div>
           
         </div>

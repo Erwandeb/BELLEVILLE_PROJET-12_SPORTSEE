@@ -39,13 +39,18 @@ const PerformanceChart = ({performance}) => {
                     outerRadius="80%" 
                     data={performance.data}
                     fill="#FFFFFF" 
+                    
                 >
                     <PolarGrid 
-
+                        outerRadius={5}
+                        cx="50%" 
+                        cy="50%" 
                     />
                     <PolarAngleAxis 
                         dataKey="kind"
-                        axisLine={false}
+                        axisLine={false}   
+                        tickLine={false} 
+                        
                     />
                     <PolarRadiusAxis 
                         axisLine={false}
@@ -54,7 +59,7 @@ const PerformanceChart = ({performance}) => {
                     <Radar 
                         name="Mike"
                         dataKey="value" 
-                        stroke="#FF0101" 
+                        strokeOpacity={0.9} 
                         fill="#FF0101" 
                         fillOpacity={0.5} 
                     />

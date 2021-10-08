@@ -16,10 +16,20 @@ const AverageSession = ({ average }) => {
     if(!average.sessions) {
         return null
     }
+
+    
+    /*
+    const CustomIcon = () => {
+        if(average.sessions.day === 1){
+            return console.log("coucou")
+        }
+    }
+    */
+    
   
 
     
-    
+    /*
     function numberIntoDay(){
         let number = average.sessions;
         let dayWeek = ["L","M", "M", "J", "V","S","D"];
@@ -27,11 +37,12 @@ const AverageSession = ({ average }) => {
             number
         ))
     }
+    */
     
-   numberIntoDay()
+  
    
     
-console.log(average.sessions)
+console.log("average.session",average.sessions)
 
     return (
         
@@ -71,6 +82,7 @@ console.log(average.sessions)
                         dataKey="day"
                         tickLine={false}
                         axisLine={false}
+                        
                     />
                    
                 </LineChart>
