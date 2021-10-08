@@ -16,26 +16,38 @@ const AverageSession = ({ average }) => {
     if(!average.sessions) {
         return null
     }
+  
+
     
-
-
+    
+    function numberIntoDay(){
+        let number = average.sessions;
+        let dayWeek = ["L","M", "M", "J", "V","S","D"];
+        number.map((day)=>(
+            number
+        ))
+    }
+    
+   numberIntoDay()
+   
     
 console.log(average.sessions)
 
     return (
+        
         <div className="averageSession">
+            <p className="title-graph">Durée moyenne des sessions</p>
             <ResponsiveContainer width="100%" height="100%">
                 <LineChart 
                     width={258}
                     height={263} 
                     data={average.sessions}
                     margin={{
-                        top: 50,
-                        right: 5,
-                        left: 5,
+                        top: 70,
+                        right: 15,
+                        left: 15,
                         bottom: 5,
                     }}
-                    
                 >
                     <defs>
                         <linearGradient id="colorGradient" x1 ="0" y1="0" x2="0" y2="0">
@@ -48,16 +60,19 @@ console.log(average.sessions)
                         dataKey="sessionLength" 
                         stroke="#FFFFFF"
                         strokeWidth={3} 
-                        dot={{fill:"#FFFFFF", stroke:"#FFFFFF" }}
-                        activeDot={{ stroke: 'red', strokeWidth: 2, r: 10 }}
+                        dot={false}
+                        activeDot={false}
                         strokeDashArray="4 1 2"
                         fill="url(#color)"
+                        opacity={0.70}
+                        
                     />
-                        <XAxis 
+                    <XAxis 
                         dataKey="day"
                         tickLine={false}
                         axisLine={false}
                     />
+                   
                 </LineChart>
             </ResponsiveContainer>
         </div>

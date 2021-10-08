@@ -6,6 +6,7 @@ import api from '../api';
 import KeyData from '../components/KeyData';
 import BarChartActivity from '../components/BarChartActivity';
 import AverageSession from '../components/AverageSession';
+import PerformanceChart from '../components/PerformanceChart';
 
 /**
 * This page group all data for chart component
@@ -96,7 +97,7 @@ const Home = () => {
         .catch(err => console.log(err))
     }
 
-/* */
+
     if(error) {
         return <div className="infoHomePage">Erreur : {error.message}</div>;
     } else if (!isLoaded) {
@@ -111,6 +112,7 @@ const Home = () => {
                 <KeyData user={user} />
                 <BarChartActivity activity = {activity} />
                 <AverageSession average={average} />
+                <PerformanceChart performance={performance}/>
             </div>
           
         </div>

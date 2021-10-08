@@ -23,6 +23,7 @@ const BarChartActivity = ({ activity }) => {
 
     return (
         <div className="barChartActivity">
+           <p className="title-graph-barchart">Activité quotidienne</p>
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                     width={500}

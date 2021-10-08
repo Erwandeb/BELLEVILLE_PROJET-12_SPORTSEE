@@ -4,6 +4,18 @@
     width: 835px;
     height: 320px;
     margin-left: 100px;
+    position: relative;
+    
+    .title-graph-barchart{
+        font-weight: bold;
+        position: absolute;
+        font-size: 15px;
+        top: 10px;
+        left: 40px;
+
+    }
+
+
     .recharts-legend-wrapper{
     position: relative;
     width: 786px;
