@@ -28,7 +28,7 @@ class ApiMock{
                     lastName: 'Tyson',
                     age : 55,
                 },
-                todayScore: 0.8,
+                todayScore: 0.78,
                 keyData: {
                     calorieCount: 2600,
                     proteinCount: 195,

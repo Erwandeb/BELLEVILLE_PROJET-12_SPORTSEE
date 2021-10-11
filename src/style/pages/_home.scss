@@ -7,10 +7,10 @@
         position: absolute;
         left: 120px;
         top:96px;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-column-gap: 20px;
-        grid-template-rows: 100px 100px 100px 100px 100px 100px 100px 100px ;
-        grid-row-gap: 15px;
+        grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
+        grid-column-gap: 5px;
+        grid-template-rows: 95px 95px 95px 95px 95px 95px 95px 95px ;
+        row-gap: 5px;
         justify-self: stretch;
 
     }
@@ -26,4 +26,14 @@
     right: 50%;
     left: 50%;
     bottom: 50%;
+}
+
+.display-details-data{
+    display: flex;
+    justify-content: space-between;
+    width: 820px;
+    height: 258px;
+    position: absolute;
+    bottom: 10px;
+    left: 100px;
 }

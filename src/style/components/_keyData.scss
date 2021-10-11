@@ -1,10 +1,11 @@
 .keyData{
-    height: 550px;
+    height: 650px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    grid-column-start: 6;
-    grid-row-start: 3;
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
 
     .keyCount{
         display: flex;

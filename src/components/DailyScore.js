@@ -1,7 +1,7 @@
 import React from 'react';
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
 /**
-* This component render a radar chart with performance activity
+* This component render a radar chart with daily score activity
 * Data come from state Home.js
 * We are using the library Rechart.js 
 *
@@ -22,6 +22,11 @@ const DailyScore = ({ user }) => {
 
     return (
         <div className="dailyScoreChart">
+            <p className="title-daily-score">Score</p>
+            <div className="affichage-daily-score">
+                <p className="score-pourcentage">{DailyScore}% </p>
+                <p className="texte-score"> de votre objectif</p>
+            </div>
             <PieChart width={800} height={400}>
                 <Pie
                     data={user.todayScore}
@@ -35,6 +40,7 @@ const DailyScore = ({ user }) => {
                 >
                 </Pie>
             </PieChart>
+
         </div>
     );
 };

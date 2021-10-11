@@ -112,11 +112,14 @@ const Home = () => {
                 <WelcomeUser user={user} />
                 <KeyData user={user} />
                 <BarChartActivity activity = {activity} />
-                <AverageSession average={average} />
-                <PerformanceChart performance={performance}/>
-                < DailyScore  user={user}/>
+                <div className="display-details-data">
+                    <AverageSession average={average} />
+                    <PerformanceChart performance={performance}/>
+                    <DailyScore  user={user}/>
+                </div>
+               
             </div>
-          
+           
         </div>
     );
     }
