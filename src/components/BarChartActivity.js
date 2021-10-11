@@ -68,7 +68,7 @@ const BarChartActivity = ({ activity }) => {
                         barSize={7}  
                         radius={3} 
                         stackId="b"
-                      
+                        minPointSize={10}
                     />
                     <Bar 
                         name="Calories brûlées (kCal)" 
@@ -77,6 +77,7 @@ const BarChartActivity = ({ activity }) => {
                         barSize={7} 
                         radius={3} 
                         stackId="a"
+                        maxBarSize={80}
                     />
                 </BarChart>
             </ResponsiveContainer>

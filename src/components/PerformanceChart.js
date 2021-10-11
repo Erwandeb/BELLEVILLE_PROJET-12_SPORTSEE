@@ -20,7 +20,9 @@ const PerformanceChart = ({performance}) => {
         return null
     }
 
-    console.log(performance.data)
+ 
+    console.log("perfData", performance.data)
+
     return (
         <div className="radarChartPerformance">
             <ResponsiveContainer 
@@ -50,7 +52,7 @@ const PerformanceChart = ({performance}) => {
                         dataKey="kind"
                         axisLine={false}   
                         tickLine={false} 
-                        
+
                     />
                     <PolarRadiusAxis 
                         axisLine={false}

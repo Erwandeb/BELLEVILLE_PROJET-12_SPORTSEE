@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: space-between;
     position: absolute;
-    right: 0px;
+    right: 15px;
     bottom: 10px;
 
     .keyCount{
@@ -30,3 +30,36 @@
     }
 }
 
+@media screen and (max-width:1439px){
+    .keyData{
+        height: 650px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        right: 15px;
+        bottom: 10px;
+    
+        .keyCount{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #FBFBFB;
+            width: 208px;
+            height: 124px;
+            img{
+                width: 55px;
+                height: 55px;
+            }
+        }
+    
+        .dataBold{
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        p{
+            font-size: 12px;
+        }
+    }
+}

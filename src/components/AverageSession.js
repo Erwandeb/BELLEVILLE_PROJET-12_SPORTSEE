@@ -39,10 +39,10 @@ const AverageSession = ({ average }) => {
     }
     */
     
+    const dayOfWeek= ["L","M","M","J","v","S","D"];
   
    
-    
-console.log("average.session",average.sessions)
+
 
     return (
         

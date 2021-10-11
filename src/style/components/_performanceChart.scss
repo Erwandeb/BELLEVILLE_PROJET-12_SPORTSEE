@@ -1,8 +1,27 @@
 .radarChartPerformance{
     background-color: #282D30;
-
     height:258px;
     width: 253px;
-
     border-radius: 5px;
+}
+
+.recharts-polar-grid-angle{
+    line{
+        stroke: none;
+    }
+}
+
+@media screen and (max-width:1439px){
+    .radarChartPerformance{
+        background-color: #282D30;
+        height:208px;
+        width: 203px;
+        border-radius: 5px;
+    }
+    
+    .recharts-polar-grid-angle{
+        line{
+            stroke: none;
+        }
+    }
 }

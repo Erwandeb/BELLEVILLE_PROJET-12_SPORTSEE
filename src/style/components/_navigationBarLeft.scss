@@ -2,8 +2,9 @@
    background-color: $main-color;
    display: flex;
    flex-direction: column;
+   position: relative;
    width: 120px ;
-   height: 1024px;
+   height: 100%;
    justify-content: center;
     .iconList{
         display: flex;
@@ -38,3 +39,44 @@
    
 }
 
+@media screen and (max-width:1439px){
+    .NavigationBarLeft{
+        background-color: $main-color;
+        display: flex;
+        flex-direction: column;
+        width: 110px ;
+        height: 1024px;
+        justify-content: center;
+         .iconList{
+             display: flex;
+             flex-direction: column;
+             width: 120px ;
+             text-align: center;
+             align-items: center;
+             justify-content: center;
+             img{
+                 width: 54px;
+                 height: 54px;
+                 border-radius: 10px;
+                 margin-top: 7px;
+                 margin-bottom: 7px;
+             }
+         }
+         .copyright{
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             margin-top: 50px;
+             font-size: 12px;
+             p{
+                 color: white;
+                 writing-mode: vertical-lr;
+                 text-orientation: sideways;
+                 text-align: center;
+                 align-items: center;
+                 font-size: 12px;
+             }
+         }
+        
+     }
+}

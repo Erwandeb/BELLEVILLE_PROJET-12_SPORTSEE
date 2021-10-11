@@ -17,3 +17,25 @@
         font-size: 24px;
     }
 }
+
+@media screen and (max-width:1439px){
+    .navigation{
+        display: flex;
+        background-color: $main-color;
+        width: 100%;
+        box-shadow: 10px 5px 5px rgb(206, 205, 205);
+        .liste-navigation{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            align-items: center;
+        }
+        a{
+            list-style-type: none;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+    }
+}

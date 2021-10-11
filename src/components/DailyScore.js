@@ -1,5 +1,5 @@
 import React from 'react';
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie,} from 'recharts';
 /**
 * This component render a radar chart with daily score activity
 * Data come from state Home.js
@@ -15,28 +15,32 @@ const DailyScore = ({ user }) => {
     if(!user.todayScore) {
         return null
     }
-    console.log(user.todayScore)
+   
 
-    const DailyScore = user.todayScore*100
-  
+    const dailyScore = user.todayScore*100
+   
 
     return (
         <div className="dailyScoreChart">
             <p className="title-daily-score">Score</p>
             <div className="affichage-daily-score">
-                <p className="score-pourcentage">{DailyScore}% </p>
+                <p className="score-pourcentage">{dailyScore}% </p>
                 <p className="texte-score"> de votre objectif</p>
             </div>
-            <PieChart width={800} height={400}>
+            
+            <PieChart 
+                width={258}
+                height={263} 
+            >
                 <Pie
-                    data={user.todayScore}
+                    data={user}
                     cx={50}
                     cy={50}
-                    innerRadius={60}
-                    outerRadius={80}
+                    innerRadius={10}
+                    outerRadius={10}
                     fill="#FF0000"
                     paddingAngle={5}
-                    dataKey={DailyScore}
+                    dataKey={user.dailyScore*100}
                 >
                 </Pie>
             </PieChart>

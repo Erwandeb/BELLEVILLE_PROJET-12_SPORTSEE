@@ -16,3 +16,22 @@
     }
 }
 
+@media screen and (max-width:1439px){
+    .averageSession{
+        background-color: #FF0000;
+        height:208px;
+        width: 203px;
+        border-radius: 5px;
+        position: relative;
+    
+        .title-graph{
+            width: 140px;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            color:#FFFFFF ;
+            font-size: 15px;
+            opacity: 0.50;
+        }
+    }
+}

@@ -111,7 +111,9 @@ const Home = () => {
             <div className="corpus-home">
                 <WelcomeUser user={user} />
                 <KeyData user={user} />
-                <BarChartActivity activity = {activity} />
+                <div className="barchartActivity">
+                    <BarChartActivity activity = {activity} />
+                </div>
                 <div className="display-details-data">
                     <AverageSession average={average} />
                     <PerformanceChart performance={performance}/>
