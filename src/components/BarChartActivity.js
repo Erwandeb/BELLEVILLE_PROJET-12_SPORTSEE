@@ -26,8 +26,7 @@ const BarChartActivity = ({ activity }) => {
            <p className="title-graph-barchart">Activité quotidienne</p>
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart
-                    width={500}
-                    height={500}
+                   
                     data={activity.sessions}
                     margin={{
                         top: 5,

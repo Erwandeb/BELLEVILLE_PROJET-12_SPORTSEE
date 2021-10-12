@@ -12,22 +12,24 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Responsi
 
 
 const PerformanceChart = ({performance}) => {
+   
+    // if "undefined" error
     if(!performance.kind) {
         return null
     }
-
     if(!performance.data) {
         return null
     }
 
- 
+
+    const kind = performance.kind;
+    const dataRadar = performance.value;
     console.log("perfData", performance.data)
+    console.log("perfKind", performance.kind)
 
     return (
         <div className="radarChartPerformance">
             <ResponsiveContainer 
-                width="100%" 
-                height="100%"
                 margin={{
                     top: 10,
                     right: 10,
@@ -41,7 +43,6 @@ const PerformanceChart = ({performance}) => {
                     outerRadius="80%" 
                     data={performance.data}
                     fill="#FFFFFF" 
-                    
                 >
                     <PolarGrid 
                         outerRadius={5}
@@ -60,7 +61,7 @@ const PerformanceChart = ({performance}) => {
                     />
                     <Radar 
                         name="Mike"
-                        dataKey="value" 
+                        dataKey="value"
                         strokeOpacity={0.9} 
                         fill="#FF0101" 
                         fillOpacity={0.5} 

@@ -13,6 +13,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 
 const AverageSession = ({ average }) => {
 
+    // if "undefined" error
     if(!average.sessions) {
         return null
     }
@@ -26,9 +27,6 @@ const AverageSession = ({ average }) => {
     }
     */
     
-  
-
-    
     /*
     function numberIntoDay(){
         let number = average.sessions;
@@ -41,17 +39,12 @@ const AverageSession = ({ average }) => {
     
     const dayOfWeek= ["L","M","M","J","v","S","D"];
   
-   
-
-
     return (
         
         <div className="averageSession">
             <p className="title-graph">Durée moyenne des sessions</p>
             <ResponsiveContainer width="100%" height="100%">
                 <LineChart 
-                    width={258}
-                    height={263} 
                     data={average.sessions}
                     margin={{
                         top: 70,
@@ -76,13 +69,12 @@ const AverageSession = ({ average }) => {
                         strokeDashArray="4 1 2"
                         fill="url(#color)"
                         opacity={0.70}
-                        
+                        stopOpacity={0.5}
                     />
                     <XAxis 
                         dataKey="day"
                         tickLine={false}
                         axisLine={false}
-                        
                     />
                    
                 </LineChart>

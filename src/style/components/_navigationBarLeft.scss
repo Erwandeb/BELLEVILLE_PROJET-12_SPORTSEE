@@ -40,12 +40,13 @@
 }
 
 @media screen and (max-width:1439px){
+    
     .NavigationBarLeft{
         background-color: $main-color;
         display: flex;
         flex-direction: column;
         width: 110px ;
-        height: 1024px;
+        height: 100%;
         justify-content: center;
          .iconList{
              display: flex;

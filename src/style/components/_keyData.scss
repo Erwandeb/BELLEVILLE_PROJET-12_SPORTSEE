@@ -1,18 +1,17 @@
 .keyData{
-    height: 650px;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: absolute;
-    right: 15px;
-    bottom: 10px;
-
+    grid-column: 4;
+    grid-row: span 2;
     .keyCount{
         display: flex;
         justify-content: space-around;
         align-items: center;
         background-color: #FBFBFB;
-        width: 258px;
+        width: 100%;
         height: 124px;
         img{
             width: 60px;
@@ -31,33 +30,21 @@
 }
 
 @media screen and (max-width:1439px){
+   
     .keyData{
-        height: 650px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: absolute;
-        right: 15px;
-        bottom: 10px;
-    
         .keyCount{
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            background-color: #FBFBFB;
-            width: 208px;
-            height: 124px;
+            height: 104px;
             img{
-                width: 55px;
-                height: 55px;
+                width: 50px;
+                height: 50px;
             }
         }
-    
+
         .dataBold{
             font-weight: bold;
             font-size: 16px;
         }
-        
+
         p{
             font-size: 12px;
         }

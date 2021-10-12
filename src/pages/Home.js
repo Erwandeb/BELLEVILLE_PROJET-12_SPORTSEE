@@ -110,16 +110,16 @@ const Home = () => {
             <NavigationBarLeft />
             <div className="corpus-home">
                 <WelcomeUser user={user} />
-                <KeyData user={user} />
-                <div className="barchartActivity">
-                    <BarChartActivity activity = {activity} />
-                </div>
-                <div className="display-details-data">
-                    <AverageSession average={average} />
-                    <PerformanceChart performance={performance}/>
-                    <DailyScore  user={user}/>
-                </div>
+                <div className="graphic-grid-size-bloc">
+                    <div className="graphic-grid" >
+                        <BarChartActivity activity = {activity} />
+                        <AverageSession average={average} />
+                        <PerformanceChart performance={performance}/>
+                        <DailyScore  user={user}/>
+                        <KeyData user={user} />
+                    </div>
                
+                </div>
             </div>
            
         </div>

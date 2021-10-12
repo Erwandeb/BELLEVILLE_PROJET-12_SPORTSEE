@@ -12,14 +12,14 @@ $main-color:#020203;
     padding: 0;
 }
 
-body{
-    font-family: $font-1;
+html, 
+body {
     height: 100%;
+    font-family: $font-1;
 }
 
-html{
-    height: 100%;
-}
+
+
 
 strong{
     color: #E60000;

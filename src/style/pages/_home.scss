@@ -1,16 +1,38 @@
 .home{
     position: relative;
     width: 100%;
-    height: 90vh;
-    .corpus-home{
-        width: 85%;
-        position: absolute;
-        left: 120px;
-        top:96px;
-        justify-self: stretch;
+    height: 100vh;
+    
+}
 
+.corpus-home{
+    width: 85%;
+    position: absolute;
+    left: 120px;
+    top:96px;
+    justify-self: stretch;
+}
+
+
+// Controls all graphics blocs
+.graphic-grid-size-bloc{
+    width: 90%;
+    top: 170px;
+    height: 540px;
+    position: absolute;
+    left: 100px;
+    .graphic-grid{
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 260px 260px;
+        row-gap: 20px;
+        column-gap: 20px;
+        justify-self: stretch;
     }
 }
+
 
 .infoHomePage{
     font-size: large;
@@ -22,48 +44,11 @@
     bottom: 50%;
 }
 
-.display-details-data{
-    display: flex;
-    justify-content: space-between;
-    width: 820px;
-    height: 258px;
-    position: absolute;
-    top: 530px;
-    left: 100px;
 
-}
 
 @media screen and (max-width:1439px){
-    .home{
-        position: relative;
-        width: 100%;
-        .corpus-home{
-            width: 85%;
-            position: absolute;
-            left: 100px;
-            top:90px;
-            justify-self: stretch;
-    
-        }
-    }
-    
-    .infoHomePage{
-        font-size: large;
-        color: black;
-        position:absolute;
-        top : 50%;
-        right: 50%;
-        left: 50%;
-        bottom: 50%;
-    }
-    
-    .display-details-data{
-        display: flex;
-        justify-content: space-between;
-        width: 620px;
-        height: 208px;
-        position: absolute;
-        bottom: 10px;
-        left: 150px;
+    .graphic-grid-size-bloc{
+        top: 150px;
+        left: 50px;
     }
 }
