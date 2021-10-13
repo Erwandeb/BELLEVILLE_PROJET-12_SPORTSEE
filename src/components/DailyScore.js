@@ -1,5 +1,5 @@
 import React from 'react';
-import { PieChart, Pie, Cell} from 'recharts';
+import { RadialBarChart, RadialBar, Legend, ResponsiveContainer,PolarAngleAxis } from 'recharts';
 /**
 * This component render a pie chart with daily score activity
 * Data come from state Home.js
@@ -17,25 +17,10 @@ const DailyScore = ({ user }) => {
         return null
     }
    
-    console.log("user",user)
+    console.log("user",user.todayScore)
     const dailyScore = user.todayScore*100
    
-    const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
-
-    const RADIAN = Math.PI / 180;
-    const renderCustomizedLabel = ({
-        cx, cy, midAngle, innerRadius, outerRadius, percent, index,
-    }) => {
-        const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-        const x = cx + radius * Math.cos(-midAngle * RADIAN);
-        const y = cy + radius * Math.sin(-midAngle * RADIAN);
-
-        return (
-            <text x={x} y={y} fill="red" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
-            {`${(percent * 100).toFixed(0)}%`}
-            </text>
-        );
-    };
+    const circleSize = 50;
 
     return (
         <div className="dailyScoreChart">
@@ -45,22 +30,38 @@ const DailyScore = ({ user }) => {
                 <p className="texte-score"> de votre objectif</p>
             </div>
             
-            <PieChart 
-       
+            <RadialBarChart
+                width={circleSize}
+                height={circleSize}
+                cx={circleSize / 2}
+                cy={circleSize / 2}
+                innerRadius="10%"
+                outerRadius="80%"
+                barSize={15}
+                data={user}
+                startAngle={90}
+                endAngle={-270}
+                fill="#FF0000"
+                blendStroke
             >
-                <Pie
-                    data={user}
-                    dataKey={user.dailyScore*100}
-                    cx={50}
-                    cy={50}
-                    outerRadius={50}
+                <PolarAngleAxis
+                    type="number"
+                    domain={[0, 100]}
+                    angleAxisId={0}
+                    tick={false}
                     fill="#FF0000"
-                    paddingAngle={5}
-                    label={renderCustomizedLabel}
-                >
-                    <Cell  fill="#FF0000"/>
-                </Pie>
-            </PieChart>
+                    dataKey="todayScore"
+                    
+                />
+                <RadialBar
+                    background
+                    clockWise
+                    dataKey={user.todayScore*100}
+                    cornerRadius={circleSize / 2}
+                    fill="#FF0000"
+                    minAngle={15}
+                />
+            </RadialBarChart>
 
         </div>
     );
