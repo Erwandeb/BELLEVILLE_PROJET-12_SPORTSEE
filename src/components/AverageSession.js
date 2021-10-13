@@ -18,7 +18,6 @@ const AverageSession = ({ average }) => {
         return null
     }
 
-    
     /*
     const CustomIcon = () => {
         if(average.sessions.day === 1){

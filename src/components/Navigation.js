@@ -2,6 +2,16 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Logo from './Logo';
 
+
+/**
+* This component render a navigation
+* Data come from state Home.js
+* We are using the library Rechart.js 
+*
+* @author Erwan
+* @version 1.1
+*/
+
 const Navigation = () => {
     return (
         <div className="navigation">

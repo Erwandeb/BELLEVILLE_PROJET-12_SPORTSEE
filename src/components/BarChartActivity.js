@@ -14,6 +14,7 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Resp
 
 const BarChartActivity = ({ activity }) => {
    
+    // if "undefined" error
     if(!activity.sessions) {
         return null
     }
@@ -44,10 +45,10 @@ const BarChartActivity = ({ activity }) => {
                         axisLine={false}
                     />
                     <YAxis 
-                        dataKey="kilogram"
+                        dataKey="calories"
                         orientation="right" 
                         type="number"
-                        domain={["dataMin",'dataMax']} 
+                        domain={[0,'dataMax']} 
                         fill="#9B9EAC" 
                         tickLine={false}
                         tickCount={4}

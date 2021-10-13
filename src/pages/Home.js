@@ -88,7 +88,14 @@ const Home = () => {
         .then(
             (performance) => {
             setIsLoaded(true);
-            setPerformance(performance);
+            const perfs = performance.data.map((perf)=>{
+                return {
+                    ...perf,
+                    kindName : performance.kind[perf.kind]
+                }
+            })
+            console.log(perfs)
+            setPerformance(perfs);
             },
             (error) => {
                 setIsLoaded(true);

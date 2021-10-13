@@ -15,6 +15,7 @@ import fatIcon from '../public/medias/fat-icon.png';
 
 const KeyData = ({ user }) => {
 
+    // if "undefined" error
     if(!user.keyData) {
         return null
     }
