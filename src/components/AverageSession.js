@@ -14,37 +14,26 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 const AverageSession = ({ average }) => {
 
     // if "undefined" error
-    if(!average.sessions) {
+    if(!average) {
         return null
     }
 
-    /*
-    const CustomIcon = () => {
-        if(average.sessions.day === 1){
-            return console.log("coucou")
-        }
-    }
-    */
-    
-    /*
-    function numberIntoDay(){
-        let number = average.sessions;
-        let dayWeek = ["L","M", "M", "J", "V","S","D"];
-        number.map((day)=>(
-            number
-        ))
-    }
-    */
-    
-    const dayOfWeek= ["L","M","M","J","v","S","D"];
-  
+    let tooltip;
+    const CustomTooltip = ({ active, payload }) => {
+        if (!active || !tooltip)    
+            return null
+        for (const bar of payload)
+        if (bar.dataKey === tooltip)
+            return <div className="tooltip-averagesession">{bar.value} min</div>
+        return null
+    };
+   
     return (
-        
         <div className="averageSession">
             <p className="title-graph">Durée moyenne des sessions</p>
             <ResponsiveContainer width="100%" height="100%">
                 <LineChart 
-                    data={average.sessions}
+                    data={average}
                     margin={{
                         top: 70,
                         right: 15,
@@ -64,14 +53,19 @@ const AverageSession = ({ average }) => {
                         stroke="#FFFFFF"
                         strokeWidth={3} 
                         dot={false}
-                        activeDot={false}
+                        activeDot={{ stroke: 'red', strokeWidth: 2, r: 10 }}
                         strokeDashArray="4 1 2"
                         fill="url(#color)"
                         opacity={0.70}
                         stopOpacity={0.5}
+                        onMouseOver={ () => tooltip="sessionLength" }
+                    />
+                    <Tooltip 
+                         content={<CustomTooltip/>}
+                         viewBox= {{ x: 30, y: 30, width: 600, height: 600 }}
                     />
                     <XAxis 
-                        dataKey="day"
+                        dataKey="dayWeek"
                         tickLine={false}
                         axisLine={false}
                     />

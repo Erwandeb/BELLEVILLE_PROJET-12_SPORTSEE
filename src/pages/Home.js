@@ -67,12 +67,29 @@ const Home = () => {
         .catch(err => console.log(err))
     }
 
+    const daysOfWeek = {
+        1: 'L',
+        2: 'M',
+        3: 'M',
+        4: 'J',
+        5: 'V',
+        6: 'S',
+        7: 'D'
+    }
+
     function mockingApiUserAverageSession(){
         api.getUserAverageSession(id)
         .then(
             (average) => {
             setIsLoaded(true);
-            setAverage(average);
+            console.log(average.sessions)
+            const averageByDays = average.sessions.map((sess)=>{
+                return {
+                    ...sess,
+                    dayWeek : daysOfWeek[sess.day]
+                }
+            })
+            setAverage(averageByDays);
             },
             (error) => {
                 setIsLoaded(true);
@@ -94,7 +111,6 @@ const Home = () => {
                     kindName : performance.kind[perf.kind]
                 }
             })
-            console.log(perfs)
             setPerformance(perfs);
             },
             (error) => {

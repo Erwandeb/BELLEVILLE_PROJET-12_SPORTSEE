@@ -22,12 +22,24 @@ const BarChartActivity = ({ activity }) => {
         return null
     }
 
+    let tooltip;
+
+    const CustomTooltip = ({ active, payload }) => {
+        if (!active || !tooltip){
+            return null
+        }   
+        for (const bar of payload){
+            if (bar.dataKey === tooltip)
+                return <div className="tooltip-barchart">{bar.value}</div>
+        return null
+        };
+    };
+
     return (
         <div className="barChartActivity">
            <p className="title-graph-barchart">Activité quotidienne</p>
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart
-                   
                     data={activity.sessions}
                     margin={{
                         top: 5,
@@ -54,10 +66,12 @@ const BarChartActivity = ({ activity }) => {
                         tickCount={4}
                         axisLine={false}
                     />
-                    <Tooltip />
+                    <Tooltip 
+                        content={<CustomTooltip/>}
+                        viewBox= {{ x: 30, y: 30, width: 600, height: 600 }}
+                    />
                     <Legend 
                         verticalAlign="top"
-
                         height={36} 
                         align="right"
                         iconType="circle"
@@ -70,6 +84,7 @@ const BarChartActivity = ({ activity }) => {
                         radius={3} 
                         stackId="b"
                         minPointSize={10}
+                        onMouseOver={ () => tooltip="kilogram" }
                     />
                     <Bar 
                         name="Calories brûlées (kCal)" 
@@ -79,6 +94,7 @@ const BarChartActivity = ({ activity }) => {
                         radius={3} 
                         stackId="a"
                         maxBarSize={80}
+                        onMouseOver={ () => tooltip="calories" }
                     />
                 </BarChart>
             </ResponsiveContainer>
