@@ -13,13 +13,23 @@
     }
 }
 
-.recharts-polar-angle-axis-tick-value {
-    tspan{
+
+    .recharts-polar-angle-axis-tick-value {
         padding: 20px;
+        tspan{
+            font-size: 12px;
+        }
+            
     }
-        
-}
+    
+
 
 @media screen and (max-width:1439px){
 
+    .recharts-polar-angle-axis-tick-value {
+        tspan{
+            font-size: 6px;
+        }
+            
+    }
 }

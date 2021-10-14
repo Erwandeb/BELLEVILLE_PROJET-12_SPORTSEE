@@ -48,7 +48,7 @@ const BarChartActivity = ({ activity }) => {
                         dataKey="calories"
                         orientation="right" 
                         type="number"
-                        domain={[0,'dataMax']} 
+                        domain={[0,'dataMax + 50']} 
                         fill="#9B9EAC" 
                         tickLine={false}
                         tickCount={4}
@@ -57,6 +57,7 @@ const BarChartActivity = ({ activity }) => {
                     <Tooltip />
                     <Legend 
                         verticalAlign="top"
+
                         height={36} 
                         align="right"
                         iconType="circle"
