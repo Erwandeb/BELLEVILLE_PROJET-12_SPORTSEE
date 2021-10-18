@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer,PolarAngleAxis } from 'recharts';
 
 /**
@@ -19,49 +20,71 @@ const DailyScore = ({ user }) => {
    
     console.log("user", user.todayScore);
     const dailyScore = user.todayScore*100;
-   
-    const circleSize = 200;
+    const testing = <div>hello</div>
+    const circleSize = 2000;
 
     return (
         <div className="dailyScoreChart">
             <p className="title-daily-score">Score</p>
-            <div className="affichage-daily-score">
-                <p className="score-pourcentage">{dailyScore}%</p>
-                <p className="texte-score"> de votre objectif</p>
-            </div>
-            <RadialBarChart
-                width={circleSize}
-                height={circleSize}
-                innerRadius="10%"
-                outerRadius="80%"
-                barSize={2}
-                data={[{value:dailyScore}]}
-                startAngle={90}
-                fill="#FF0000"
-                blendStroke
-            >
-                <RadialBar
-                    background
-                    clockWise
-                    dataKey="value"
+            <ResponsiveContainer width="100%" height="100%">
+                <RadialBarChart
+                   
+                    innerRadius="75%"
+                    outerRadius="75%"
+                    barSize={10}
+                    data={[{value:dailyScore}]}
+                    startAngle={90}
                     fill="#FF0000"
-                    minAngle={15}
-                />
+                    blendStroke
+                    cx="50%"
+                    cy="50%"
+                     
+                >
+                    <RadialBar
+                        background
+                        radius={3} 
+                        dataKey="value"
+                        fill="#FF0000"
+                        minAngle={15}
+                        clockWise={false}
+                    />
 
-                <text
-                    x={circleSize / 2}
-                    y={circleSize / 2}
-                    textAnchor="middle"
-                    dominantBaseline="middle"
-                    className="progress-label"
-                    fill="#FF0FF0"
-                    >
-                    {dailyScore}%
-                    de votre objectif
-                </text>
-            </RadialBarChart>
+                    <text
+                       x="50%"
+                       y="50%"
+                        textAnchor="middle"
+                        dominantBaseline="middle"
+                        className="progress-label"
+                        fill="#000000"
+                        >
+                        {dailyScore}%
+                        de votre objectif
+                    </text>
+                </RadialBarChart>
+            </ResponsiveContainer>
         </div>
     );
 };
+
+
+
+// Prop-types verification
+DailyScore.propTypes = {
+    data: PropTypes.object,
+    dataKey: PropTypes.string,
+    cx: PropTypes.string,
+    cy: PropTypes.string,
+    fill :PropTypes.string,
+    name:PropTypes.string,
+    innerRadius: PropTypes.string,
+    fillOpacity:PropTypes.number,
+    axisLine:PropTypes.bool,
+    tickLine:PropTypes.bool,
+    width:PropTypes.number,
+    height:PropTypes.number,
+    x:PropTypes.number,
+    y:PropTypes.number,
+    dailyScore:PropTypes.number,
+}
 
 export default DailyScore;

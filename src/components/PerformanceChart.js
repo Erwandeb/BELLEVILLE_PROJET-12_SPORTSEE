@@ -1,5 +1,6 @@
 import React from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import PropTypes from 'prop-types';
 
 /**
 * This component render a radar chart with performance activity
@@ -18,8 +19,6 @@ const PerformanceChart = ({performance}) => {
         return null
     }
 
-
-    console.log("perfData", performance)
 
     return (
         <div className="radarChartPerformance">
@@ -50,7 +49,7 @@ const PerformanceChart = ({performance}) => {
                         tick={false}
                     />
                     <Radar 
-                        name="Mike"
+                      
                         dataKey="value"
                         strokeOpacity={0.9} 
                         fill="#FF0101" 
@@ -61,5 +60,21 @@ const PerformanceChart = ({performance}) => {
         </div>
     );
 };
+
+
+
+// Prop-types verification
+PerformanceChart.propTypes = {
+    data: PropTypes.object,
+    dataKey: PropTypes.string,
+    cx: PropTypes.string,
+    cy: PropTypes.string,
+    fill :PropTypes.string,
+    name:PropTypes.string,
+    fillOpacity:PropTypes.number,
+    outerRadius : PropTypes.number,
+    axisLine:PropTypes.bool,
+    tickLine:PropTypes.bool,
+}
 
 export default PerformanceChart;

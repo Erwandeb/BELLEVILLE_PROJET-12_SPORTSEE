@@ -27,11 +27,12 @@ const WelcomeUser = ({ user }) => {
     );
 };
 
-/*
-WelcomeUser.propTypes ={
-    firstname:PropTypes.string.isRequired
+
+// Prop-types verification
+WelcomeUser.propTypes = {
+    firstname: PropTypes.string,
 }
-*/
+
 
 
 

@@ -1,12 +1,12 @@
 import React from 'react';
-import PropType from 'prop-types';
+import PropTypes from 'prop-types';
 import calorieIcon from '../public/medias/calories-icon.png';
 import proteinIcon from '../public/medias/protein-icon.png';
 import carbsIcon from '../public/medias/carbs-icon.png';
 import fatIcon from '../public/medias/fat-icon.png';
 
 /**
-* This component view show keyData 
+* This component view render the component keyData 
 * Data come from the page Home.js
 * 
 * @author Erwan
@@ -59,11 +59,15 @@ const KeyData = ({ user }) => {
     );
 };
 
-/*
-KeyData.propTypes ={
-    firstname:PropTypes.string.isRequired
-}
-*/
+
+// Prop-types verification
+KeyData.propTypes = {
+   calorieCount : PropTypes.number,
+   proteinCount : PropTypes.number,
+   carbohydrateCount : PropTypes.number,
+   lipidCount : PropTypes.number,
+}   
+
 
 
 export default KeyData;

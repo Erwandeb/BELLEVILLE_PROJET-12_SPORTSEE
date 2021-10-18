@@ -1,5 +1,6 @@
 import React from 'react';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import PropTypes from 'prop-types';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 /**
 * This component render a barChart with daily activity
@@ -23,7 +24,6 @@ const BarChartActivity = ({ activity }) => {
     }
 
     let tooltip;
-
     const CustomTooltip = ({ active, payload }) => {
         if (!active || !tooltip){
             return null
@@ -34,6 +34,7 @@ const BarChartActivity = ({ activity }) => {
         return null
         };
     };
+
 
     return (
         <div className="barChartActivity">
@@ -101,5 +102,30 @@ const BarChartActivity = ({ activity }) => {
         </div>
     );
 };
+
+
+// Prop-types verification
+BarChartActivity.propTypes = {
+    data: PropTypes.object,
+    dataKey: PropTypes.string,
+    cx: PropTypes.string,
+    cy: PropTypes.string,
+    fill :PropTypes.string,
+    name:PropTypes.string,
+    fillOpacity:PropTypes.number,
+    outerRadius : PropTypes.number,
+    axisLine:PropTypes.bool,
+    tickLine:PropTypes.bool,
+    maxBarSize:PropTypes.number,
+    barSize:PropTypes.number,
+    radius:PropTypes.number,
+    tickCount:PropTypes.number,
+    orientation:PropTypes.string,
+    verticalAlign:PropTypes.number,
+    height:PropTypes.number,
+    align:PropTypes.number,
+    iconType:PropTypes.number,
+    stackId:PropTypes.string,
+}
 
 export default BarChartActivity;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 /**
@@ -31,7 +32,9 @@ const AverageSession = ({ average }) => {
     return (
         <div className="averageSession">
             <p className="title-graph">Durée moyenne des sessions</p>
-            <ResponsiveContainer width="100%" height="100%">
+            <ResponsiveContainer
+             width="100%" 
+             height="100%">
                 <LineChart 
                     data={average}
                     margin={{
@@ -75,5 +78,29 @@ const AverageSession = ({ average }) => {
         </div>
     );
 };
+
+// Prop-types verification
+AverageSession.propTypes = {
+    data: PropTypes.object,
+    dataKey: PropTypes.string,
+    cx: PropTypes.string,
+    cy: PropTypes.string,
+    fill :PropTypes.string,
+    name:PropTypes.string,
+    fillOpacity:PropTypes.number,
+    outerRadius : PropTypes.number,
+    axisLine:PropTypes.bool,
+    tickLine:PropTypes.bool,
+    maxBarSize:PropTypes.number,
+    barSize:PropTypes.number,
+    radius:PropTypes.number,
+    tickCount:PropTypes.number,
+    orientation:PropTypes.string,
+    verticalAlign:PropTypes.number,
+    height:PropTypes.number,
+    align:PropTypes.number,
+    iconType:PropTypes.number,
+    stackId:PropTypes.string,
+}
 
 export default AverageSession;
