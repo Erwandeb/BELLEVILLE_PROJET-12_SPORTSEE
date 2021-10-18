@@ -20,17 +20,19 @@ const DailyScore = ({ user }) => {
    
     console.log("user", user.todayScore);
     const dailyScore = user.todayScore*100;
-    const testing = <div>hello</div>
     const circleSize = 2000;
 
     return (
         <div className="dailyScoreChart">
             <p className="title-daily-score">Score</p>
+                <div className="affichage-daily-score">
+                    <p className="score-pourcentage">{dailyScore}%</p>
+                    <p className="texte-score"> de votre objectif</p>
+                </div>
             <ResponsiveContainer width="100%" height="100%">
                 <RadialBarChart
-                   
-                    innerRadius="75%"
-                    outerRadius="75%"
+                    innerRadius="70%"
+                    outerRadius="70%"
                     barSize={10}
                     data={[{value:dailyScore}]}
                     startAngle={90}
@@ -38,28 +40,18 @@ const DailyScore = ({ user }) => {
                     blendStroke
                     cx="50%"
                     cy="50%"
-                     
+                    radius={10}
                 >
                     <RadialBar
                         background
-                        radius={3} 
                         dataKey="value"
                         fill="#FF0000"
                         minAngle={15}
                         clockWise={false}
+                        radius={10}
                     />
 
-                    <text
-                       x="50%"
-                       y="50%"
-                        textAnchor="middle"
-                        dominantBaseline="middle"
-                        className="progress-label"
-                        fill="#000000"
-                        >
-                        {dailyScore}%
-                        de votre objectif
-                    </text>
+              
                 </RadialBarChart>
             </ResponsiveContainer>
         </div>
