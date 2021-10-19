@@ -223,6 +223,7 @@ class Api {
 * @return data from API, in JSON format. Otherwise, it throw error
 *
 */
+
 let api = new Api()
 if(process.env.REACT_APP_API === 'mock'){
     api = new ApiMock()

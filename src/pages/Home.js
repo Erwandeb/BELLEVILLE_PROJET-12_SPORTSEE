@@ -31,19 +31,97 @@ const Home = () => {
     // Handle ID data
     const id = 99;
 
-    // Useful variables
-    const daysOfWeek = {
-        1: 'L',
-        2: 'M',
-        3: 'M',
-        4: 'J',
-        5: 'V',
-        6: 'S',
-        7: 'D'
-    }
-
+ 
 
     useEffect(() => {
+
+        // Mocking User Details
+        function mockingApiUserDetails(){
+            api.getUserDetails(id)
+            .then(
+                (user) => {
+                setIsLoaded(true);
+                setUser(user);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
+            .catch(err => console.log(err))
+        }
+
+        // Mocking User Activity
+        function mockingApiUserActivity(){
+            api.getUserActivity(id)
+            .then(
+                (activity) => {
+                setIsLoaded(true);
+                setActivity(activity);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
+            .catch(err => console.log(err))
+        }
+
+           // Useful variables
+            const daysOfWeek = {
+                1: 'L',
+                2: 'M',
+                3: 'M',
+                4: 'J',
+                5: 'V',
+                6: 'S',
+                7: 'D'
+            }
+
+        // Mocking User Average Sessions
+        function mockingApiUserAverageSession(){
+            api.getUserAverageSession(id)
+            .then(
+                (average) => {
+                setIsLoaded(true);
+                const averageByDays = average.sessions.map((sess)=>{
+                    return {
+                        ...sess,
+                        dayWeek : daysOfWeek[sess.day]
+                    }
+                })
+                setAverage(averageByDays);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
+            .catch(err => console.log(err))
+        }
+
+        // Mocking User Performance 
+        function mockingApiUserPerformance(){
+            api.getUserPerformance(id)
+            .then(
+                (performance) => {
+                setIsLoaded(true);
+                const perfs = performance.data.map((perf)=>{
+                    return {
+                        ...perf,
+                        kindName : performance.kind[perf.kind]
+                    }
+                })
+                setPerformance(perfs);
+                },
+                (error) => {
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
+            .catch(err => console.log(err))
+        }
+
         mockingApiUserDetails();
         mockingApiUserActivity();
         mockingApiUserAverageSession();
@@ -51,81 +129,7 @@ const Home = () => {
     },[])
     
 
-    // Mocking User Details
-    function mockingApiUserDetails(){
-        api.getUserDetails(id)
-        .then(
-            (user) => {
-            setIsLoaded(true);
-            setUser(user);
-            },
-            (error) => {
-                setIsLoaded(true);
-                setError(error);
-            }
-        )
-        .catch(err => console.log(err))
-    }
-
-    // Mocking User Activity
-    function mockingApiUserActivity(){
-        api.getUserActivity(id)
-        .then(
-            (activity) => {
-            setIsLoaded(true);
-            setActivity(activity);
-            },
-            (error) => {
-                setIsLoaded(true);
-                setError(error);
-            }
-        )
-        .catch(err => console.log(err))
-    }
-
-    // Mocking User Average Sessions
-    function mockingApiUserAverageSession(){
-        api.getUserAverageSession(id)
-        .then(
-            (average) => {
-            setIsLoaded(true);
-            const averageByDays = average.sessions.map((sess)=>{
-                return {
-                    ...sess,
-                    dayWeek : daysOfWeek[sess.day]
-                }
-            })
-            setAverage(averageByDays);
-            },
-            (error) => {
-                setIsLoaded(true);
-                setError(error);
-            }
-        )
-        .catch(err => console.log(err))
-    }
-
-    // Mocking User Performance 
-    function mockingApiUserPerformance(){
-        api.getUserPerformance(id)
-        .then(
-            (performance) => {
-            setIsLoaded(true);
-            const perfs = performance.data.map((perf)=>{
-                return {
-                    ...perf,
-                    kindName : performance.kind[perf.kind]
-                }
-            })
-            setPerformance(perfs);
-            },
-            (error) => {
-                setIsLoaded(true);
-                setError(error);
-            }
-        )
-        .catch(err => console.log(err))
-    }
+    
 
 
     // Handle Error, loading or render home Page 

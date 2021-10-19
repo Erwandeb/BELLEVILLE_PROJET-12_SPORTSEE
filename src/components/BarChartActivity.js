@@ -23,7 +23,7 @@ const BarChartActivity = ({ activity }) => {
         return null
     }
 
-    console.log(activity.sessions.length)
+
     // Creating custom Tool Tip
     let tooltip;
     const CustomTooltip = ({ active, payload }) => {

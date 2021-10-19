@@ -52,10 +52,24 @@
     justify-content: center;
     
 }
+
 .recharts-sector {
     stroke-linejoin: round;
     stroke-width: 7px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    border-radius: 10px;
   }
+
+  .recharts-polar-angle-axis-tick-value {
+    transform: translateY(0rem);
+    margin-bottom: 30px;
+    tspan{
+        width: 50px;
+        height: 50px;
+    }
+ 
+}
 
 @media screen and (max-width:1439px){
 

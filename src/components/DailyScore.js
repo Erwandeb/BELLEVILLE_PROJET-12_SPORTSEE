@@ -37,8 +37,7 @@ const DailyScore = ({ user }) => {
                     fill="#FF0000"
                     blendStroke
                     cx="50%"
-                    cy="50%"
-                    radius={[0, 5, 5, 0]}
+                    cy="50%"                
                 >
                     <RadialBar
                         background
@@ -46,7 +45,8 @@ const DailyScore = ({ user }) => {
                         fill="#FF0000"
                         minAngle={15}
                         clockWise={false}
-                        radius={[0, 5, 5, 0]}
+                        strokeLinecap="round"
+                      
                     />
                 </RadialBarChart>
             </ResponsiveContainer>
