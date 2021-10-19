@@ -14,28 +14,31 @@ import PropTypes from 'prop-types';
 
 const PerformanceChart = ({performance}) => {
    
-    // if "undefined" error
+     // handle "undefined" error
     if(!performance) {
         return null
     }
 
-
     return (
         <div className="radarChartPerformance">
             <ResponsiveContainer 
-                width="100%" height="100%"
+                width="100%" 
+                height="100%"
             >
                 <RadarChart 
                     cx="50%" 
                     cy="50%" 
-                    outerRadius="60%" 
                     data={performance}
                     fill="#FFFFFF" 
+                    outerRadius="66%"
+                    innerRadius="10%"
+                    x="50%"
+                    dy="50%"
                 >
                     <PolarGrid 
                         outerRadius={1}
-                        cx="50%" 
-                        cy="50%" 
+                        cx="90%" 
+                        cy="90%" 
                     />
                     <PolarAngleAxis 
                         dataKey="kindName"
@@ -43,13 +46,15 @@ const PerformanceChart = ({performance}) => {
                         tickLine={false} 
                         cy={50}
                         cx={50}
+                     
                     />
                     <PolarRadiusAxis 
                         axisLine={false}
                         tick={false}
                     />
                     <Radar 
-                      
+                        cx="50%" 
+                        cy="50%" 
                         dataKey="value"
                         strokeOpacity={0.9} 
                         fill="#FF0101" 

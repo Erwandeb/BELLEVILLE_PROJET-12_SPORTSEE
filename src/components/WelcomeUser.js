@@ -14,7 +14,7 @@ import PropTypes from 'prop-types'
 
 const WelcomeUser = ({ user }) => {
 
-    // if "undefined" error
+     // handle "undefined" error
     if(!user.userInfos){
         return null
     }

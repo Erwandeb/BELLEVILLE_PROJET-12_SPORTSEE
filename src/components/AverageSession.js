@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 /**
 * This component render a tiny line with daily activity
@@ -14,11 +14,12 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsi
 
 const AverageSession = ({ average }) => {
 
-    // if "undefined" error
+    // handle "undefined" error
     if(!average) {
         return null
     }
 
+    // Creating Custom ToolTip
     let tooltip;
     const CustomTooltip = ({ active, payload }) => {
         if (!active || !tooltip)    
@@ -72,7 +73,6 @@ const AverageSession = ({ average }) => {
                         tickLine={false}
                         axisLine={false}
                     />
-                   
                 </LineChart>
             </ResponsiveContainer>
         </div>

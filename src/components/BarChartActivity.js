@@ -15,7 +15,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 
 const BarChartActivity = ({ activity }) => {
    
-    // if "undefined" error
+      // handle "undefined" error
     if(!activity.sessions) {
         return null
     }
@@ -23,19 +23,21 @@ const BarChartActivity = ({ activity }) => {
         return null
     }
 
+    // Creating custom Tool Tip
     let tooltip;
     const CustomTooltip = ({ active, payload }) => {
+
         if (!active || !tooltip){
             return null
         }   
         for (const bar of payload){
-            if (bar.dataKey === tooltip)
-                return <div className="tooltip-barchart">{bar.value}</div>
-        return null
+            console.log("yoyo", payload);
+                return <div className="tooltip-barchart">{bar.value}{bar.value}</div>
+        
         };
     };
-
-
+    
+  
     return (
         <div className="barChartActivity">
            <p className="title-graph-barchart">Activité quotidienne</p>
@@ -69,7 +71,7 @@ const BarChartActivity = ({ activity }) => {
                     />
                     <Tooltip 
                         content={<CustomTooltip/>}
-                        viewBox= {{ x: 30, y: 30, width: 600, height: 600 }}
+                       
                     />
                     <Legend 
                         verticalAlign="top"

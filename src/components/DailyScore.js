@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RadialBarChart, RadialBar, Legend, ResponsiveContainer,PolarAngleAxis } from 'recharts';
+import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
 
 /**
 * This component render a pie chart with daily score activity
@@ -13,15 +13,13 @@ import { RadialBarChart, RadialBar, Legend, ResponsiveContainer,PolarAngleAxis }
 
 const DailyScore = ({ user }) => {
 
-    // if "undefined" error
+    // handle "undefined" error
     if(!user.todayScore) {
         return null
     }
    
-    console.log("user", user.todayScore);
     const dailyScore = user.todayScore*100;
-    const circleSize = 2000;
-
+  
     return (
         <div className="dailyScoreChart">
             <p className="title-daily-score">Score</p>
@@ -50,14 +48,11 @@ const DailyScore = ({ user }) => {
                         clockWise={false}
                         radius={10}
                     />
-
-              
                 </RadialBarChart>
             </ResponsiveContainer>
         </div>
     );
 };
-
 
 
 // Prop-types verification

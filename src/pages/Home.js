@@ -27,7 +27,20 @@ const Home = () => {
     const [average, setAverage] = useState({});
     const [performance, setPerformance] = useState({});
 
+
+    // Handle ID data
     const id = 99;
+
+    // Useful variables
+    const daysOfWeek = {
+        1: 'L',
+        2: 'M',
+        3: 'M',
+        4: 'J',
+        5: 'V',
+        6: 'S',
+        7: 'D'
+    }
 
 
     useEffect(() => {
@@ -37,6 +50,8 @@ const Home = () => {
         mockingApiUserPerformance();
     },[])
     
+
+    // Mocking User Details
     function mockingApiUserDetails(){
         api.getUserDetails(id)
         .then(
@@ -52,6 +67,7 @@ const Home = () => {
         .catch(err => console.log(err))
     }
 
+    // Mocking User Activity
     function mockingApiUserActivity(){
         api.getUserActivity(id)
         .then(
@@ -67,16 +83,7 @@ const Home = () => {
         .catch(err => console.log(err))
     }
 
-    const daysOfWeek = {
-        1: 'L',
-        2: 'M',
-        3: 'M',
-        4: 'J',
-        5: 'V',
-        6: 'S',
-        7: 'D'
-    }
-
+    // Mocking User Average Sessions
     function mockingApiUserAverageSession(){
         api.getUserAverageSession(id)
         .then(
@@ -99,7 +106,7 @@ const Home = () => {
         .catch(err => console.log(err))
     }
 
-    
+    // Mocking User Performance 
     function mockingApiUserPerformance(){
         api.getUserPerformance(id)
         .then(
@@ -122,6 +129,7 @@ const Home = () => {
     }
 
 
+    // Handle Error, loading or render home Page 
     if(error) {
         return <div className="infoHomePage">Erreur : {error.message}</div>;
     } else if (!isLoaded) {
