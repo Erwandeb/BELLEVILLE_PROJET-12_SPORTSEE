@@ -89,7 +89,6 @@ const Home = () => {
         .then(
             (average) => {
             setIsLoaded(true);
-            console.log(average.sessions)
             const averageByDays = average.sessions.map((sess)=>{
                 return {
                     ...sess,

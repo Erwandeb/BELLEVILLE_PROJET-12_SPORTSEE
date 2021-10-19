@@ -52,7 +52,10 @@
     justify-content: center;
     
 }
-
+.recharts-sector {
+    stroke-linejoin: round;
+    stroke-width: 7px;
+  }
 
 @media screen and (max-width:1439px){
 

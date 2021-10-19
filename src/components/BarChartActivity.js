@@ -23,18 +23,22 @@ const BarChartActivity = ({ activity }) => {
         return null
     }
 
+    console.log(activity.sessions.length)
     // Creating custom Tool Tip
     let tooltip;
     const CustomTooltip = ({ active, payload }) => {
-
         if (!active || !tooltip){
             return null
-        }   
-        for (const bar of payload){
-            console.log("yoyo", payload);
-                return <div className="tooltip-barchart">{bar.value}{bar.value}</div>
-        
-        };
+        } else{
+            return <div className="tooltip-barchart">
+                        <div className="tooltip-barchart-kilogram">
+                            {payload[0].value} kg
+                        </div>
+                        <div className="tooltip-barchart-calories">
+                            {payload[1].value} Kcal
+                        </div> 
+                    </div>
+        }; 
     };
     
   
@@ -55,7 +59,7 @@ const BarChartActivity = ({ activity }) => {
                         strokeDasharray="3 3" 
                     />
                     <XAxis 
-                        dataKey=""
+                        dataKey="index"
                         tickLine={false}
                         axisLine={false}
                     />
@@ -71,7 +75,6 @@ const BarChartActivity = ({ activity }) => {
                     />
                     <Tooltip 
                         content={<CustomTooltip/>}
-                       
                     />
                     <Legend 
                         verticalAlign="top"
