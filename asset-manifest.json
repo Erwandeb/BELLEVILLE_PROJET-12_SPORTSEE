@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/BELLEVILLE_PROJET-12_SPORTSEE/static/css/main.12cccab7.chunk.css",
+    "main.css": "/BELLEVILLE_PROJET-12_SPORTSEE/static/css/main.b2a23b54.chunk.css",
     "main.js": "/BELLEVILLE_PROJET-12_SPORTSEE/static/js/main.44498b51.chunk.js",
     "main.js.map": "/BELLEVILLE_PROJET-12_SPORTSEE/static/js/main.44498b51.chunk.js.map",
     "runtime-main.js": "/BELLEVILLE_PROJET-12_SPORTSEE/static/js/runtime-main.d7f0a397.js",
@@ -10,14 +10,14 @@
     "static/js/3.36bb5656.chunk.js": "/BELLEVILLE_PROJET-12_SPORTSEE/static/js/3.36bb5656.chunk.js",
     "static/js/3.36bb5656.chunk.js.map": "/BELLEVILLE_PROJET-12_SPORTSEE/static/js/3.36bb5656.chunk.js.map",
     "index.html": "/BELLEVILLE_PROJET-12_SPORTSEE/index.html",
-    "static/css/main.12cccab7.chunk.css.map": "/BELLEVILLE_PROJET-12_SPORTSEE/static/css/main.12cccab7.chunk.css.map",
+    "static/css/main.b2a23b54.chunk.css.map": "/BELLEVILLE_PROJET-12_SPORTSEE/static/css/main.b2a23b54.chunk.css.map",
     "static/js/2.e6002cdc.chunk.js.LICENSE.txt": "/BELLEVILLE_PROJET-12_SPORTSEE/static/js/2.e6002cdc.chunk.js.LICENSE.txt",
     "static/media/logosvg.c9828dd8.svg": "/BELLEVILLE_PROJET-12_SPORTSEE/static/media/logosvg.c9828dd8.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.d7f0a397.js",
     "static/js/2.e6002cdc.chunk.js",
-    "static/css/main.12cccab7.chunk.css",
+    "static/css/main.b2a23b54.chunk.css",
     "static/js/main.44498b51.chunk.js"
   ]
 }
