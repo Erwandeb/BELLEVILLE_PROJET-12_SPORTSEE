@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/BELLEVILLE_PROJET-12_SPORTSEE/static/css/main.a8ece7f6.chunk.css",
-    "main.js": "/BELLEVILLE_PROJET-12_SPORTSEE/static/js/main.7ec4a848.chunk.js",
-    "main.js.map": "/BELLEVILLE_PROJET-12_SPORTSEE/static/js/main.7ec4a848.chunk.js.map",
+    "main.js": "/BELLEVILLE_PROJET-12_SPORTSEE/static/js/main.44498b51.chunk.js",
+    "main.js.map": "/BELLEVILLE_PROJET-12_SPORTSEE/static/js/main.44498b51.chunk.js.map",
     "runtime-main.js": "/BELLEVILLE_PROJET-12_SPORTSEE/static/js/runtime-main.d7f0a397.js",
     "runtime-main.js.map": "/BELLEVILLE_PROJET-12_SPORTSEE/static/js/runtime-main.d7f0a397.js.map",
     "static/js/2.e6002cdc.chunk.js": "/BELLEVILLE_PROJET-12_SPORTSEE/static/js/2.e6002cdc.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.d7f0a397.js",
     "static/js/2.e6002cdc.chunk.js",
     "static/css/main.a8ece7f6.chunk.css",
-    "static/js/main.7ec4a848.chunk.js"
+    "static/js/main.44498b51.chunk.js"
   ]
 }
