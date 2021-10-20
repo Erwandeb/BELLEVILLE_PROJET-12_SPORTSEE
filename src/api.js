@@ -17,6 +17,7 @@ const apiMockRunning = true;
 * @return data from API, in JSON format. Otherwise, it throw error
 *
 */
+
 class ApiMock{
 
     getUserDetails(id){
@@ -194,21 +195,25 @@ class ApiMock{
 class Api {
     
     getUserDetails(id){
-        return fetch(process.env.REACT_APP_API_URL + '/users/' + id).then((res) => res.json())
+        return fetch(process.env.REACT_APP_API_URL + '/user/' + id).then((res) => res.json())
+        .then((res)=>res.data)
     }
 
     getUserActivity(id){
-        return fetch(process.env.REACT_APP_API_URL + '/users/' + id + '/activity').then((res) => res.json())
+        return fetch(process.env.REACT_APP_API_URL + '/user/' + id + '/activity').then((res) => res.json())
+        .then((res)=>res.data)
     }
 
     
     getUserAverageSession(id){
-        return fetch(process.env.REACT_APP_API_URL + '/users/' + id + '/average-sessions').then((res) => res.json())
+        return fetch(process.env.REACT_APP_API_URL + '/user/' + id + '/average-sessions').then((res) => res.json())
+        .then((res)=>res.data)
     }
 
     
     getUserPerformance(id){
-        return fetch(process.env.REACT_APP_API_URL + '/users/' + id + '/performance').then((res) => res.json())
+        return fetch(process.env.REACT_APP_API_URL + '/user/' + id + '/performance').then((res) => res.json())
+        .then((res)=>res.data)
     }
 
 }

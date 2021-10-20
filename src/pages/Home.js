@@ -25,16 +25,16 @@ const Home = () => {
     const [user, setUser] = useState({});
     const [activity, setActivity] = useState({});
     const [average, setAverage] = useState({});
-    const [performance, setPerformance] = useState({});
+    const [performance, setPerformance] = useState([]);
 
 
     // Handle ID data
-    const id = 99;
+    const id = 12;
 
  
 
     useEffect(() => {
-        
+
         // Mocking User Details
         function mockingApiUserDetails(){
             api.getUserDetails(id)
@@ -128,10 +128,8 @@ const Home = () => {
         mockingApiUserPerformance();
     },[])
     
-
+  
     
-
-
     // Handle Error, loading or render home Page 
     if(error) {
         return <div className="infoHomePage">Erreur : {error.message}</div>;

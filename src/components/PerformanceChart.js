@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Text } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer} from 'recharts';
 import PropTypes from 'prop-types';
 
 /**
@@ -9,6 +9,11 @@ import PropTypes from 'prop-types';
 *
 * @author Erwan
 * @version 1.1
+*/
+
+/*
+polarAngles={[]}
+polarRadius={[]}
 */
 
 
@@ -33,14 +38,13 @@ const PerformanceChart = ({performance}) => {
                     outerRadius="66%"
                     innerRadius="10%"
                 >
-                    <PolarGrid 
-                        outerRadius={1}
+                    <PolarGrid
+                    outerRadius={2}
                     />
                     <PolarAngleAxis 
                         dataKey="kindName"
                         axisLine={false}   
                         tickLine={false} 
-                        tick={{ transform: 'translate(0, 3)' }}
                     />
                     <PolarRadiusAxis 
                         axisLine={false}
@@ -53,11 +57,6 @@ const PerformanceChart = ({performance}) => {
                         strokeOpacity={0.9} 
                         fill="#FF0101" 
                         fillOpacity={0.5} 
-                    />
-                    <Text
-                        verticalAnchor='middle'
-                        textAnchor='middle'
-                        tick={{ transform: 'translate(0, 3)' }}
                     />
                 </RadarChart>
             </ResponsiveContainer>
