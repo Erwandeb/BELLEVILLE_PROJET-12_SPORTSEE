@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Logo from './Logo';
 
-
 /**
 * This component render a navigation
 * Data come from state Home.js
@@ -24,7 +23,7 @@ const Navigation = () => {
                     Profil
                 </NavLink>
                 <NavLink exact to="/">
-                Réglage
+                    Réglage
                 </NavLink>
                 <NavLink exact to="/">
                     Communauté 

@@ -34,7 +34,7 @@ const Home = () => {
  
 
     useEffect(() => {
-
+        
         // Mocking User Details
         function mockingApiUserDetails(){
             api.getUserDetails(id)

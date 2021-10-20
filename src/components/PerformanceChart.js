@@ -32,7 +32,6 @@ const PerformanceChart = ({performance}) => {
                     fill="#FFFFFF" 
                     outerRadius="66%"
                     innerRadius="10%"
-                    
                 >
                     <PolarGrid 
                         outerRadius={1}
@@ -60,13 +59,11 @@ const PerformanceChart = ({performance}) => {
                         textAnchor='middle'
                         tick={{ transform: 'translate(0, 3)' }}
                     />
-             
                 </RadarChart>
             </ResponsiveContainer>
         </div>
     );
 };
-
 
 
 // Prop-types verification
