@@ -41,6 +41,7 @@ const PerformanceChart = ({performance}) => {
                         dataKey="kindName"
                         axisLine={false}   
                         tickLine={false} 
+                        tick={{ transform: 'translate(0, 3)' }}
                     />
                     <PolarRadiusAxis 
                         axisLine={false}
@@ -56,6 +57,8 @@ const PerformanceChart = ({performance}) => {
                     />
                     <Text
                         verticalAnchor='middle'
+                        textAnchor='middle'
+                        tick={{ transform: 'translate(0, 3)' }}
                     />
              
                 </RadarChart>
