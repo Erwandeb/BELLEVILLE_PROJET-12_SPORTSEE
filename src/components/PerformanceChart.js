@@ -11,10 +11,7 @@ import PropTypes from 'prop-types';
 * @version 1.1
 */
 
-/*
-polarAngles={[]}
-polarRadius={[]}
-*/
+
 
 
 const PerformanceChart = ({performance}) => {
@@ -35,7 +32,7 @@ const PerformanceChart = ({performance}) => {
                     cy="50%" 
                     data={performance}
                     fill="#FFFFFF" 
-                    outerRadius="66%"
+                    outerRadius="56%"
                     innerRadius="10%"
                 >
                     <PolarGrid
