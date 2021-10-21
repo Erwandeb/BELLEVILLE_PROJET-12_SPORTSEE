@@ -36,7 +36,6 @@ const Home = () => {
 const id = 12;
 
  
-
     useEffect(() => {
 
         // Mocking User Details

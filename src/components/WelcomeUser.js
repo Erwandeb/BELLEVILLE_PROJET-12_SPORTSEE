@@ -21,7 +21,7 @@ const WelcomeUser = ({ user }) => {
 
     return (
         <div className="accueil-display">
-            <h1>Bonjour <strong>{user.userInfos.firstname}</strong></h1>
+            <h1>Bonjour <strong>{user.userInfos.firstName}</strong></h1>
             <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
         </div>
     );
