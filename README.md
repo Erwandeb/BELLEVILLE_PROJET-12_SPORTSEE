@@ -7,6 +7,29 @@ L'affichage des graphiques est réalisé avec la librairie Rechart, qui est une 
 Pour l'API, j'utilise NODE.JS et son Framework Express.js.
 
 
+### Techniques de développement :
+
+- Connecter une API avec une application Front-End
+- Création un micro-service pour développer l'application avant sa mise en production
+- Routage
+- Développer des composants sans états pour les ré-utiliser
+- Hooks (usestate,useffect)
+- Utiliser react avec des fonctions
+- Utiliser une librarie externe pour les graphiques
+- Gestion des datas
+
+
+### Outils techniques :
+
+- React.js
+- Sass
+- React router dom
+- Axios
+- Node.Js
+- Express.js
+- Rechart.js
+- D3.js
+
 
 ## Quelques captures d'écrans : 
 
